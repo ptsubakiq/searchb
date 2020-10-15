@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  web:
+    container_name: ctr-searchb-web
+    build:
+      context: .
+    image: img-searchb-web
+    volumes:
+      - .:/usr/src/app
+    ports:
+      - '3000:3000'
+    environment:
+      PORT: 3000
+      HOST: 0.0.0.0
+    command: './compose_command.bash'
